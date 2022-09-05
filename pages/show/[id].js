@@ -18,7 +18,7 @@ function Show({ result }) {
     );
 
     return (
-        <div>
+        <div className="overflow-hidden">
             <Head>
                 <title>{result.title || result.original_name}</title>
                 <link rel="icon" href="/favicon.ico" />
