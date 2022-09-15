@@ -5,7 +5,7 @@ import Hero from "../../components/Hero";
 import Image from "next/image";
 import { useState } from "react";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/lazy";
 
 
 function Show({ result }) {
@@ -18,7 +18,7 @@ function Show({ result }) {
     );
 
     return (
-        <div className="overflow-hidden">
+        <div className="">
             <Head>
                 <title>{result.title || result.original_name}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -38,7 +38,7 @@ function Show({ result }) {
                             objectFit="cover"
                         />
                     </div>
-                    <div className="absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50">
+                    <div className= "absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
                             {result.title || result.original_name}
                         </h1>
@@ -86,7 +86,7 @@ function Show({ result }) {
                     )}
 
                     <div
-                        className={`absolute top-3 inset-x-    [7%] md:inset-x-[13%] rounded overflow-hidden transition duration-1000 ${showPlayer ? "opacity-100 z-50" : "opacity-0"
+                        className={`absolute top-3 inset-x-[7%] md:inset-x-[13%] rounded overflow-hidden transition duration-1000 ${showPlayer ? "opacity-100 z-50" : "opacity-0"
                             }`}
                     >
                         <div className="flex items-center justify-between bg-black text-[#f9f9f9] p-3.5">
@@ -101,7 +101,7 @@ function Show({ result }) {
                             <ReactPlayer    
                                 url={`https://www.youtube.com/watch?v=${result.videos?.results[index]?.key}`}
                                 width="100%"
-                                height="100%"
+                                height="70vh"
                                 style={{ position: "absolute", top: "0", left: "0" }}
                                 controls={true}
                                 playing={showPlayer}

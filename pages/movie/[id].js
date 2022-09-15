@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { PlusIcon, XIcon } from "@heroicons/react/solid";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/lazy";
 
 
 function Movie({ result }) {
@@ -26,7 +26,7 @@ function Movie({ result }) {
     );
 
     return (
-        <div className="overflow-hidden">
+        <div>
             <Head>
                 <title>{result.title || result.original_name}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -94,7 +94,7 @@ function Movie({ result }) {
                     )}
 
                     <div
-                        className={`absolute top-3 inset-x-    [7%] md:inset-x-[13%] rounded overflow-hidden transition duration-1000 ${showPlayer ? "opacity-100 z-50" : "opacity-0"
+                        className={`absolute top-3 inset-x-[7%] md:inset-x-[13%] rounded overflow-hidden transition duration-1000 ${showPlayer ? "opacity-100 z-50" : "opacity-0"
                             }`}
                     >
                         <div className="flex items-center justify-between bg-black text-[#f9f9f9] p-3.5">
